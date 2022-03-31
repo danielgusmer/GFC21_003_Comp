@@ -29,7 +29,8 @@ ggplot(data=GFC21_003_Comp,aes(x=day,y=alcohol*100,color=product,linetype=produc
        colour="Product",
        linetype="Product")+
   scale_color_manual(values=cbPalette)+
-  scale_linetype_manual(values=lineVariation)
+  scale_linetype_manual(values=lineVariation)+
+  scale_x_continuous(breaks=seq(0,15,2))
 
 ggsave("16p_comp_alcohol.png",width=8.5,height=5)
 
@@ -44,7 +45,8 @@ ggplot(data=GFC21_003_Comp,aes(x=day,y=plato,color=product,linetype=product))+
        colour="Product",
        linetype="Product")+
   scale_color_manual(values=cbPalette)+
-  scale_linetype_manual(values=lineVariation)
+  scale_linetype_manual(values=lineVariation)+
+  scale_x_continuous(breaks=seq(0,15,2))
 
 ggsave("16p_comp_plato.png",width=8.5,height=5)
 
@@ -59,6 +61,7 @@ ggplot(data=GFC21_003_Comp,aes(x=day,y=pH,color=product,linetype=product))+
        colour="Product",
        linetype="Product")+
   scale_color_manual(values=cbPalette)+
-  scale_linetype_manual(values=lineVariation)
+  scale_linetype_manual(values=lineVariation)+
+  scale_x_continuous(breaks=seq(0,15,2))
 
 ggsave("16p_comp_pH.png",width=8.5,height=5)
