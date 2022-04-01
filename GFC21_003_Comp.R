@@ -66,3 +66,20 @@ ggplot(data=GFC21_003_Comp,aes(x=day,y=pH,color=product,linetype=product))+
   scale_x_continuous(breaks=seq(0,15,2))
 
 ggsave("16p_comp_pH.png",width=8.5,height=5)
+
+# Plot looking at viability between our product and competitors at 16 Plato over time
+# NOTE: data=comp[!is.na(comp$viability),] filters out all the NA cells in the viability
+# column, effectively getting rid of the breaks in lines
+ggplot(data=GFC21_003_Comp,aes(x=day,y=viability*100,color=product,linetype=product))+
+  geom_smooth(data=MEHSHG)+
+  geom_line(data=comp[!is.na(comp$viability),],size=.75)+
+  labs(title="16°Plato Fermentation Curve",
+       subtitle="Viability",
+       x="Days",
+       y="Viability (%)",
+       colour="Product",
+       linetype="Product")+
+  scale_color_manual(values=cbPalette)+
+  scale_linetype_manual(values=lineVariation)
+
+ggsave("16p_comp_viability.png",width=8.5,height=5)
