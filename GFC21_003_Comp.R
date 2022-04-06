@@ -118,7 +118,7 @@ ggplot(data=GFC21_003_Comp_24,aes(x=day,y=plato,color=product,linetype=product))
   scale_color_manual(values=cbPalette)+
   scale_linetype_manual(values=lineVariation)+
   scale_x_continuous(breaks=seq(0,15,2))+
-  scale_y_continuous(breaks=seq(-5,16,2.5))
+  scale_y_continuous(breaks=seq(-5,25,5))
 
 ggsave("24p_comp_plato.png",width=8.5,height=5)
 
